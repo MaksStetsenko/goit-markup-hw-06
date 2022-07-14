@@ -14,7 +14,13 @@
   --main-color-hover: #2196f390;
   --svg-icon-color: #ffffff;
 
+  /*Borders*/
+  --border-modal: 1px solid #21212120;
+  --border-main-radius: 4px;
+  --border-icon-radius: 50%;
+
   /*animation*/
+  --main-timing: 250ms;
   --main-animation: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -150,7 +156,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  transition: color 250ms var(--main-animation);
+  transition: color var(--main-timing) var(--main-animation);
 }
 
 .current {
@@ -181,7 +187,7 @@ img {
 .contact-link:hover,
 .contact-link:focus {
   color: var(--main-color);
-  transition: color 250ms var(--main-animation);
+  transition: color var(--main-timing) var(--main-animation);
 }
 
 .contacts-header {
@@ -197,7 +203,7 @@ img {
   display: flex;
   fill: currentColor;
 
-  transition: color 250ms var(--main-animation);
+  transition: color var(--main-timing) var(--main-animation);
 }
 
 .contact-mail-svg {
@@ -248,6 +254,7 @@ img {
   text-align: center;
   margin: 0px 250px;
 }
+
 .head-button {
   color: var(--hero-color);
   background-color: var(--main-color);
@@ -257,11 +264,11 @@ img {
   font-size: 16px;
   line-height: 1.87;
 
-  transition: background-color 250ms var(--main-animation);
+  transition: background-color var(--main-timing) var(--main-animation);
 
   /*Button size*/
 
-  border-radius: 4px;
+  border-radius: var(--border-main-radius);
   cursor: pointer;
   margin-top: 30px;
   padding: 10px 32px;
@@ -270,27 +277,27 @@ img {
 .head-button:hover,
 .head-button:focus {
   background-color: var(--hover-color);
-  transition: background-color 250ms var(--main-animation);
+  transition: background-color var(--main-timing) var(--main-animation);
 }
 
 .head-button:active {
   background-color: var(--main-color);
 }
 
+/*modal window*/
+
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
-
-  z-index: 1;
 
   width: 100%;
   height: 100%;
 
   background-color: #00000020;
 
-  transition: opacity 250ms var(--main-animation),
-    visibility 250ms var(--main-animation);
+  transition: opacity var(--main-timing) var(--main-animation),
+    visibility var(--main-timing) var(--main-animation);
 }
 
 .is-hidden {
@@ -308,20 +315,206 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  z-index: 1;
 
-  padding: 8px;
-  border-radius: 4px;
+  padding: 40px;
+  border-radius: var(--border-main-radius);
 
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
 
-  background-color: var(--second-background-color);
+  background-color: var(--hero-color);
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  transition: transform 250ms var(--main-animation);
+  transition: transform var(--main-timing) var(--main-animation);
+}
+
+.modal-title {
+  margin-bottom: 12px;
+  margin-top: 0;
+
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--main-text-color);
+}
+
+.modal-form {
+  width: 100%;
+
+  margin-bottom: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+
+  border: 1px solid #21212120;
+  border-radius: var(--border-main-radius);
+
+  transition: border var(--main-timing) var(--main-animation);
+}
+
+.modal-lable {
+  position: relative;
+}
+
+.modal-form-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(50%);
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  width: 18px;
+  height: 18px;
+
+  fill: var(--main-text-color);
+
+  transition: fill var(--main-timing) var(--main-animation);
+}
+
+.modal-label-text {
+  display: inline-block;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--second-color);
+}
+
+.modal-lable:focus-within > .modal-form-icon {
+  fill: var(--main-color);
+  transition: fill var(--main-timing) var(--main-animation);
+}
+
+.modal-textarea {
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  resize: none;
+  width: 100%;
+
+  font-size: 100%;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  border: var(--border-modal);
+  border-radius: var(--border-main-radius);
+
+  transition: border var(--main-timing) var(--main-animation);
+}
+
+.modal-textarea:focus-within,
+.modal-form:focus-within {
+  outline: none;
+
+  border: 1px solid var(--main-color);
+
+  transition: border var(--main-timing) var(--main-animation);
+}
+
+.modal-checkbox-check {
+  position: absolute;
+  left: 0;
+  transform: translateX(50%);
+
+  width: 16px;
+  height: 15px;
+
+  transition: fill var(--main-timing) var(--main-animation);
+}
+
+.modal-checkbox-checked {
+  position: absolute;
+  left: 0;
+  transform: translateX(50%);
+
+  opacity: 0;
+
+  width: 16px;
+  height: 15px;
+  fill: var(--main-color);
+
+  transition: opacity var(--main-timing) var(--main-animation);
+}
+
+.modal-form-checkbox {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 24px;
+  margin-bottom: 30px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--second-color);
+
+  cursor: pointer;
+}
+
+.modal-checkbox:checked ~ .modal-checkbox-checked {
+  opacity: 1;
+
+  transition: opacity var(--main-timing) var(--main-animation);
+}
+
+.modal-checkbox:checked ~ .modal-checkbox-check {
+  fill: var(--main-color);
+
+  transition: fill var(--main-timing) var(--main-animation);
+}
+
+.modal-checkbox-link {
+  text-decoration-line: underline;
+
+  margin-left: 0.5rem;
+
+  color: var(--main-color);
+}
+
+.modal-form-button {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 10px 55px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+
+  letter-spacing: 0.06em;
+
+  background-color: var(--main-color);
+  color: var(--footer-text-color);
+
+  border: none;
+  border-radius: var(--border-main-radius);
+
+  transition: background-color var(--main-timing) var(--main-animation),
+    box-shadow var(--main-timing) var(--main-animation);
+
+  cursor: pointer;
+}
+
+.modal-form-button:hover,
+.modal-form-button:focus {
+  background-color: var(--hover-color);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color var(--main-timing) var(--main-animation),
+    box-shadow var(--main-timing) var(--main-animation);
 }
 
 .close-modal {
@@ -332,7 +525,7 @@ img {
   padding: 6px;
 
   border: #00000010 solid 1px;
-  border-radius: 50%;
+  border-radius: var(--border-icon-radius);
 
   background-color: transparent;
 
@@ -340,11 +533,22 @@ img {
 }
 
 .svg-close {
+  fill: currentColor;
   width: 18px;
   height: 18px;
 
   display: flex;
+
+  transition: fill var(--main-timing) var(--main-animation);
 }
+
+.close-modal:hover,
+.close-modal:focus {
+  color: var(--main-color);
+
+  transition: color var(--main-timing) var(--main-animation);
+}
+
 /*About*/
 
 .about-ul {
@@ -354,6 +558,7 @@ img {
 
 .about-li {
   width: 270px;
+
   margin: 0;
 }
 
@@ -363,7 +568,7 @@ img {
   background-color: var(--second-background-color);
 
   height: 120px;
-  border-radius: 4px;
+  border-radius: var(--border-main-radius);
 
   display: flex;
   align-items: center;
@@ -435,7 +640,7 @@ img {
 
 .team-background {
   background-color: var(--second-background-color);
-  border-radius: 4px;
+  border-radius: var(--border-main-radius);
 }
 
 .team-info {
@@ -474,6 +679,7 @@ img {
 
   font-size: 16px;
   line-height: 1.18;
+
   color: var(--second-color);
 }
 
@@ -490,14 +696,15 @@ img {
   background-color: var(--hero-color);
   color: var(--main-logo-color);
 
-  border-radius: 50%;
+  border-radius: var(--border-icon-radius);
 
   display: flex;
   align-items: center;
+
   padding: 12px;
 
-  transition: background-color 250ms var(--main-animation),
-    color 250ms var(--main-animation);
+  transition: background-color var(--main-timing) var(--main-animation),
+    color var(--main-timing) var(--main-animation);
 }
 
 .social-link:hover,
@@ -505,13 +712,14 @@ img {
   background-color: var(--main-color);
   color: var(--hero-color);
 
-  transition: color 250ms var(--main-animation),
-    background-color 250ms var(--main-animation);
+  transition: color var(--main-timing) var(--main-animation),
+    background-color var(--main-timing) var(--main-animation);
 }
 
 .portfolio-social-logo {
   width: 20px;
   height: 20px;
+
   fill: currentColor;
 }
 
@@ -528,16 +736,17 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 170px;
   height: 92px;
 
   color: var(--main-logo-color);
 
-  border-radius: 4px;
+  border-radius: var(--border-main-radius);
   border: var(--main-logo-color) solid 1px;
 
-  transition: color 250ms var(--main-animation),
-    border 250ms var(--main-animation);
+  transition: color var(--main-timing) var(--main-animation),
+    border var(--main-timing) var(--main-animation);
 
   cursor: pointer;
 }
@@ -569,7 +778,6 @@ img {
 }
 
 .filter-button {
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -577,11 +785,13 @@ img {
   color: var(--main-text-color);
   border: var(--main-color);
 
-  border-radius: 4px;
+  border-radius: var(--border-main-radius);
+
   padding: 6px 22px;
 
-  transition: background-color 250ms var(--main-animation),
-    color 250ms var(--main-animation), box-shadow 250ms var(--main-animation);
+  transition: background-color var(--main-timing) var(--main-animation),
+    color var(--main-timing) var(--main-animation),
+    box-shadow var(--main-timing) var(--main-animation);
 
   cursor: pointer;
 }
@@ -594,8 +804,9 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
-  transition: background-color 250ms var(--main-animation),
-    color 250ms var(--main-animation), box-shadow 250ms var(--main-animation);
+  transition: background-color var(--main-timing) var(--main-animation),
+    color var(--main-timing) var(--main-animation),
+    box-shadow var(--main-timing) var(--main-animation);
 }
 
 .active-filter {
@@ -610,13 +821,13 @@ img {
 
 .portfolio-list {
   margin-top: 50px;
+  margin-right: -30px;
+  margin-bottom: -30px;
 
   display: flex;
   flex-wrap: wrap;
 
   justify-content: center;
-  margin-right: -30px;
-  margin-bottom: -30px;
 }
 
 .portfolio-post {
@@ -631,14 +842,15 @@ img {
   display: inline-block;
   cursor: pointer;
 
-  transition: box-shadow 250ms var(--main-animation);
+  transition: box-shadow var(--main-timing) var(--main-animation);
 }
 
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 250ms var(--main-animation);
+
+  transition: box-shadow var(--main-timing) var(--main-animation);
 }
 
 .portfolio-img-thumb {
@@ -660,7 +872,7 @@ img {
   top: 0;
 
   transform: translateY(100%);
-  transition: transform 250ms var(--main-animation);
+  transition: transform var(--main-timing) var(--main-animation);
 }
 
 .portfolio-link:hover .portfolio-hover-text,
@@ -697,12 +909,14 @@ img {
 
 .footer-background {
   background-color: var(--footer-color);
+
   padding: 64px 0;
 }
 
 .footer-container {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .logo-footer {
@@ -715,10 +929,6 @@ img {
 
 .contacts-footer {
   margin-top: 20px;
-}
-
-.cont-adress {
-  margin-right: 70px;
 }
 
 .cont-link-adress {
@@ -740,14 +950,16 @@ img {
 
   color: var(--footer-mail-tel-color);
 
-  transition: color 250ms var(--main-animation);
+  transition: color var(--main-timing) var(--main-animation);
 }
 
 /*Social network links*/
 
 .footer-h2-social-list {
   margin: 0;
+
   color: var(--footer-text-color);
+
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
@@ -755,6 +967,7 @@ img {
 
 .footer-social-list {
   display: flex;
+
   margin-top: 20px;
 }
 
@@ -775,7 +988,7 @@ img {
   padding: 12px 12px;
   border-radius: 50%;
 
-  transition: background-color 250ms var(--main-animation);
+  transition: background-color var(--main-timing) var(--main-animation);
 }
 
 .footer-social-bg:hover,
@@ -788,4 +1001,73 @@ img {
   height: 20px;
 
   fill: var(--svg-icon-color);
+}
+
+/*footer form*/
+
+.footer-form {
+  display: flex;
+}
+
+.footer-input {
+  background-color: transparent;
+  color: var(--footer-text-color);
+
+  border: 1px solid #ffffff30;
+  border-radius: var(--border-main-radius);
+
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 12px;
+
+  width: 358px;
+
+  transition: border-color var(--main-timing) var(--main-animation);
+}
+
+.footer-input:focus-within {
+  outline: none;
+
+  border-color: var(--main-color);
+  transition: border-color var(--main-timing) var(--main-animation);
+}
+
+.footer-button {
+  margin-top: 20px;
+  padding: 0px 30px;
+
+  border: none;
+  border-radius: var(--border-main-radius);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--footer-text-color);
+  background-color: var(--main-color);
+
+  transition: background-color var(--main-timing) var(--main-animation);
+
+  cursor: pointer;
+}
+
+.footer-form-icon {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-left: 10px;
+
+  width: 24px;
+  height: 24px;
+}
+
+.footer-button:hover,
+.footer-button:focus {
+  background-color: var(--hover-color);
+
+  transition: background-color var(--main-timing) var(--main-animation);
 }

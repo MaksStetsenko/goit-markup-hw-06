@@ -78,15 +78,6 @@
             Заказать услугу
           </button>
         </div>
-        <div class="backdrop is-hidden" data-modal>
-          <div class="modal">
-            <button type="button" class="close-modal" data-modal-close>
-              <svg class="svg-close">
-                <use href="./images/icons.svg#icon-close"></use>
-              </svg>
-            </button>
-          </div>
-        </div>
       </section>
 
       <!--About-->
@@ -436,6 +427,93 @@
           </ul>
         </div>
       </section>
+
+      <!--Modal Window-->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+          <form class="modal-form-group">
+            <lable for="modal-name" class="modal-lable">
+              <span class="modal-label-text">Имя</span>
+              <svg class="modal-form-icon">
+                <use href="./images/icons.svg#icon-user-form"></use>
+              </svg>
+              <input
+                class="modal-form"
+                type="text"
+                name="name"
+                id="modal-name"
+                required
+              />
+            </lable>
+
+            <lable for="modal-tel" class="modal-lable">
+              <span class="modal-label-text">Телефон</span>
+              <svg class="modal-form-icon">
+                <use href="./images/icons.svg#icon-phone-form"></use>
+              </svg>
+              <input
+                class="modal-form"
+                type="tel"
+                name="tel"
+                id="modal-tel"
+                minlength="10"
+                required
+              />
+            </lable>
+
+            <lable for="modal-mail" class="modal-lable">
+              <span class="modal-label-text">Почта</span>
+              <svg class="modal-form-icon">
+                <use href="./images/icons.svg#icon-mail-form"></use>
+              </svg>
+              <input
+                class="modal-form"
+                type="email"
+                name="email"
+                id="modal-mail"
+                required
+              />
+            </lable>
+
+            <label for="comment">
+              <span class="modal-label-text">Комментарий</span>
+              <textarea
+                class="modal-textarea"
+                name="text"
+                id="comment"
+                rows="6"
+                placeholder="Введите текст"
+              ></textarea>
+            </label>
+
+            <label class="modal-form-checkbox" for="modal-checkbox"
+              >Соглашаюсь с рассылкой и принимаю
+              <a class="modal-checkbox-link link" href=""> Условия договора</a>
+              <input
+                class="modal-checkbox visually-hidden"
+                type="checkbox"
+                name="agree"
+                id="modal-checkbox"
+                required
+              />
+              <svg class="modal-checkbox-check">
+                <use href="./images/icons.svg#icon-form-check-off"></use>
+              </svg>
+              <svg class="modal-checkbox-checked">
+                <use href="./images/icons.svg#icon-form-check-on"></use>
+              </svg>
+            </label>
+
+            <button class="modal-form-button" type="submit">Отправить</button>
+          </form>
+          <button type="button" class="close-modal" data-modal-close>
+            <svg class="svg-close">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </main>
 
     <!--footer content-->
@@ -474,7 +552,7 @@
           </address>
         </div>
         <div class="footer-social">
-          <h2 class="footer-h2-social-list">присоединяйтесь</h2>
+          <b class="footer-h2-social-list">присоединяйтесь</b>
           <ul class="footer-social-list list">
             <li class="footer-social-link">
               <a class="footer-social-bg" href=""
@@ -505,6 +583,27 @@
               </a>
             </li>
           </ul>
+        </div>
+        <div>
+          <b class="footer-h2-social-list">Подпишитесь на рассылку</b>
+          <form class="footer-form">
+            <label for="client-email"
+              ><input
+                type="email"
+                name="email"
+                class="footer-input"
+                id="client-email"
+                placeholder="E-mail"
+              />
+            </label>
+
+            <button class="footer-button" type="submit">
+              Подписаться
+              <svg class="footer-form-icon">
+                <use href="./images/icons.svg#icon-telegram"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
       <!---->
