@@ -342,11 +342,9 @@ img {
 }
 
 .modal-form {
-  width: 100%;
+  width: 448px;
+  height: 40px;
 
-  margin-bottom: 10px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 42px;
 
   border: 1px solid #21212120;
@@ -356,14 +354,16 @@ img {
 }
 
 .modal-lable {
+  display: block;
   position: relative;
+
+  margin-bottom: 10px;
 }
 
 .modal-form-icon {
   position: absolute;
   left: 12px;
   top: 50%;
-  transform: translateY(50%);
 
   display: flex;
   justify-content: center;
@@ -378,6 +378,8 @@ img {
 }
 
 .modal-label-text {
+  position: relative;
+
   display: inline-block;
   margin-bottom: 4px;
 
@@ -390,16 +392,17 @@ img {
 
 .modal-lable:focus-within > .modal-form-icon {
   fill: var(--main-color);
-  transition: fill var(--main-timing) var(--main-animation);
 }
 
 .modal-textarea {
-  padding: 12px 16px;
-  margin-bottom: 20px;
-  resize: none;
-  width: 100%;
+  display: block;
 
-  font-size: 100%;
+  padding: 12px 16px;
+  resize: none;
+
+  width: 448px;
+  height: 120px;
+
   line-height: 1.16;
   letter-spacing: 0.01em;
 
@@ -416,6 +419,10 @@ img {
   border: 1px solid var(--main-color);
 
   transition: border var(--main-timing) var(--main-animation);
+}
+
+.modal-checkbox {
+  visibility: hidden;
 }
 
 .modal-checkbox-check {
@@ -464,14 +471,10 @@ img {
 
 .modal-checkbox:checked ~ .modal-checkbox-checked {
   opacity: 1;
-
-  transition: opacity var(--main-timing) var(--main-animation);
 }
 
 .modal-checkbox:checked ~ .modal-checkbox-check {
   fill: var(--main-color);
-
-  transition: fill var(--main-timing) var(--main-animation);
 }
 
 .modal-checkbox-link {
@@ -1005,6 +1008,18 @@ img {
 
 /*footer form*/
 
+.footer-submit {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--footer-text-color);
+
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
 .footer-form {
   display: flex;
 }
@@ -1017,7 +1032,6 @@ img {
   border-radius: var(--border-main-radius);
 
   padding: 15px;
-  margin-top: 20px;
   margin-right: 12px;
 
   width: 358px;
@@ -1033,7 +1047,6 @@ img {
 }
 
 .footer-button {
-  margin-top: 20px;
   padding: 0px 30px;
 
   border: none;
