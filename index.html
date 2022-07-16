@@ -27,8 +27,8 @@
     <header class="section borders-header">
       <div class="container header">
         <nav class="main-nav">
-          <a href="./index.html" class="logo link"
-            ><span class="web-logo">Web</span>Studio</a
+          <a href="./index.html" class="logo link">
+            <span class="web-logo">Web</span>Studio</a
           >
           <ul class="navigation list">
             <li class="navigation-list">
@@ -433,7 +433,7 @@
         <div class="modal">
           <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
           <form class="modal-form-group">
-            <lable for="modal-name" class="modal-lable">
+            <label for="modal-name" class="modal-lable">
               <span class="modal-label-text">Имя</span>
               <svg class="modal-form-icon">
                 <use href="./images/icons.svg#icon-user-form"></use>
@@ -445,9 +445,9 @@
                 id="modal-name"
                 required
               />
-            </lable>
+            </label>
 
-            <lable for="modal-tel" class="modal-lable">
+            <label class="modal-lable">
               <span class="modal-label-text">Телефон</span>
               <svg class="modal-form-icon">
                 <use href="./images/icons.svg#icon-phone-form"></use>
@@ -456,32 +456,24 @@
                 class="modal-form"
                 type="tel"
                 name="tel"
-                id="modal-tel"
                 minlength="10"
                 required
               />
-            </lable>
+            </label>
 
-            <lable for="modal-mail" class="modal-lable">
+            <label class="modal-lable">
               <span class="modal-label-text">Почта</span>
               <svg class="modal-form-icon">
                 <use href="./images/icons.svg#icon-mail-form"></use>
               </svg>
-              <input
-                class="modal-form"
-                type="email"
-                name="email"
-                id="modal-mail"
-                required
-              />
-            </lable>
+              <input class="modal-form" name="email" type="email" required />
+            </label>
 
-            <label for="comment" class="modal-lable">
+            <label class="modal-lable">
               <span class="modal-label-text">Комментарий</span>
               <textarea
                 class="modal-textarea"
                 name="text"
-                id="comment"
                 rows="6"
                 placeholder="Введите текст"
               ></textarea>
